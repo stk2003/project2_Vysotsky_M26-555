@@ -1,0 +1,37 @@
+[project]
+name = "primitive-db"
+version = "0.1.0"
+description = "Примитивная база данных с таблицами, CRUD-операциями и кэшированием"
+readme = "README.md"
+authors = [
+    { name = "stk2003", email = "i.iiev@yandex.ru" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "prettytable>=3.18.0",
+    "prompt>=0.4.1",
+]
+
+[project.scripts]
+project = "primitive_db.main:main"
+database = "primitive_db.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.4",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
