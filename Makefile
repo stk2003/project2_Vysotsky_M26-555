@@ -4,7 +4,7 @@ install:
 	uv sync
 
 run:
-	uv run database
+	uv run --no-editable database
 
 lint:
 	uv run ruff check .
